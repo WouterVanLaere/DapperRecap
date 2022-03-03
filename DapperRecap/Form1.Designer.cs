@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAll = new System.Windows.Forms.Button();
+            this.btnAgeFilter = new System.Windows.Forms.Button();
             this.lstData = new System.Windows.Forms.ListBox();
             this.lblConnection = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
@@ -41,18 +41,20 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtAgeInsert = new System.Windows.Forms.TextBox();
             this.txtGender = new System.Windows.Forms.TextBox();
-            this.btnGetData = new System.Windows.Forms.Button();
+            this.btnGetAll = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnAll
+            // btnAgeFilter
             // 
-            this.btnAll.Location = new System.Drawing.Point(205, 248);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(75, 23);
-            this.btnAll.TabIndex = 0;
-            this.btnAll.Text = "All";
-            this.btnAll.UseVisualStyleBackColor = true;
-            this.btnAll.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.btnAgeFilter.Location = new System.Drawing.Point(205, 248);
+            this.btnAgeFilter.Name = "btnAgeFilter";
+            this.btnAgeFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnAgeFilter.TabIndex = 0;
+            this.btnAgeFilter.Text = "Search Age";
+            this.btnAgeFilter.UseVisualStyleBackColor = true;
+            this.btnAgeFilter.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lstData
             // 
@@ -61,6 +63,7 @@
             this.lstData.Name = "lstData";
             this.lstData.Size = new System.Drawing.Size(196, 134);
             this.lstData.TabIndex = 1;
+            this.lstData.DoubleClick += new System.EventHandler(this.lstData_DoubleClick);
             // 
             // lblConnection
             // 
@@ -152,22 +155,44 @@
             this.txtGender.Size = new System.Drawing.Size(100, 20);
             this.txtGender.TabIndex = 12;
             // 
-            // btnGetData
+            // btnGetAll
             // 
-            this.btnGetData.Location = new System.Drawing.Point(205, 308);
-            this.btnGetData.Name = "btnGetData";
-            this.btnGetData.Size = new System.Drawing.Size(75, 23);
-            this.btnGetData.TabIndex = 13;
-            this.btnGetData.Text = "Get Data";
-            this.btnGetData.UseVisualStyleBackColor = true;
-            this.btnGetData.Click += new System.EventHandler(this.btnAll_Click);
+            this.btnGetAll.Location = new System.Drawing.Point(205, 308);
+            this.btnGetAll.Name = "btnGetAll";
+            this.btnGetAll.Size = new System.Drawing.Size(75, 23);
+            this.btnGetAll.TabIndex = 13;
+            this.btnGetAll.Text = "Get All";
+            this.btnGetAll.UseVisualStyleBackColor = true;
+            this.btnGetAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(390, 374);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 14;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(205, 373);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 15;
+            this.btnDelete.Text = "Delete Person";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 450);
-            this.Controls.Add(this.btnGetData);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnGetAll);
             this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtAgeInsert);
             this.Controls.Add(this.txtLastName);
@@ -180,7 +205,7 @@
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.lblConnection);
             this.Controls.Add(this.lstData);
-            this.Controls.Add(this.btnAll);
+            this.Controls.Add(this.btnAgeFilter);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -190,7 +215,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAll;
+        private System.Windows.Forms.Button btnAgeFilter;
         private System.Windows.Forms.ListBox lstData;
         private System.Windows.Forms.Label lblConnection;
         private System.Windows.Forms.TextBox txtAge;
@@ -203,7 +228,9 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtAgeInsert;
         private System.Windows.Forms.TextBox txtGender;
-        private System.Windows.Forms.Button btnGetData;
+        private System.Windows.Forms.Button btnGetAll;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
